@@ -14,6 +14,10 @@ public class AnagramKata {
                List<String> anagrams = findAnagramsInSortedList(sortedWords);
                printAnagrams(anagrams);
 
+               //separate method that compares two strings to see if they are anagrams
+               boolean isAnagram = checkIfAnagram("heart","earth");
+               System.out.println(isAnagram);
+
            } catch (IOException e) {
                e.printStackTrace();
            }
@@ -58,5 +62,24 @@ public class AnagramKata {
 
     public static void printAnagrams(List<String> anagrams){
         System.out.println("Total number of anagrams in the file is " + anagrams.size());
+    }
+
+    public static boolean checkIfAnagram(String s1, String s2) {
+        char[] c1 = s1.toLowerCase().toCharArray();
+        char[] c2 = s2.toLowerCase().toCharArray();
+
+        Arrays.sort(c1);
+        Arrays.sort(c2);
+
+        if (c1.length != c2.length) {
+            return false;
+        }
+
+        for(int i = 0; i < c1.length; i++){
+            if(c1[i] != c2[i]){
+                return false;
+            }
+        }
+        return true;
     }
 }
