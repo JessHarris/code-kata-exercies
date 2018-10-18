@@ -23,7 +23,7 @@ public class AnagramKata {
            }
        }
     }
-    public static List<String> sortWords(List<String> words){
+    private static List<String> sortWords(List<String> words){
         List<String> sortedList = new ArrayList<>();
 
         for(String word : words){
@@ -34,7 +34,7 @@ public class AnagramKata {
         return sortedList;
     }
 
-    public static List<String> findAnagramsInSortedList(List<String> sortedWords){
+    private static List<String> findAnagramsInSortedList(List<String> sortedWords){
         Map<String, List<String>> anagramMap = new HashMap<>();
         List<String> anagrams = new ArrayList<>();
 
@@ -60,11 +60,11 @@ public class AnagramKata {
         return anagrams;
     }
 
-    public static void printAnagrams(List<String> anagrams){
+    private static void printAnagrams(List<String> anagrams){
         System.out.println("Total number of anagrams in the file is " + anagrams.size());
     }
 
-    public static boolean checkIfAnagram(String s1, String s2) {
+    private static boolean checkIfAnagram(String s1, String s2) {
         char[] c1 = s1.toLowerCase().toCharArray();
         char[] c2 = s2.toLowerCase().toCharArray();
 
