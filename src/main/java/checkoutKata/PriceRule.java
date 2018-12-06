@@ -17,8 +17,8 @@ public class PriceRule implements Rule {
     public Money applyRule(Quantity quantity) {
         boolean hasDiscount = !specialQuantity.equals(new Quantity(0));
 
-        Quantity discountedItemsQuantity = hasDiscount ? quantity.getDiscountedItems(specialQuantity) : new Quantity(0);
-        Quantity regularPriceItemsQuantity = hasDiscount ? quantity.getRegularPriceItems(specialQuantity) : quantity;
+        Quantity discountedItemsQuantity = hasDiscount ? quantity.divide(specialQuantity) : new Quantity(0);
+        Quantity regularPriceItemsQuantity = hasDiscount ? quantity.remainder(specialQuantity) : quantity;
 
         Money discountedItemsCost = specialPrice.getCost(discountedItemsQuantity);
         Money regularItemsCost = normalPrice.getCost(regularPriceItemsQuantity);

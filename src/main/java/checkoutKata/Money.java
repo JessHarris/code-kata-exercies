@@ -9,9 +9,9 @@ public class Money {
         this.amount = amount;
     }
 
-    public Money getCost(Quantity count){
-        int quantity = count.getAsInt();
-        return new Money(quantity * amount);
+    public Money getCost(Quantity quantity){
+        int quantityAsInt = quantity.getAsInt();
+        return new Money(quantityAsInt * amount);
     }
 
     public Money add(Money otherAmount){
