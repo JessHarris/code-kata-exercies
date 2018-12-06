@@ -14,12 +14,12 @@ public class Quantity {
         return new Quantity(this.quantity + 1);
     }
 
-    public Quantity getDiscountedItems(Quantity otherQuantity){
+    public Quantity divide(Quantity otherQuantity){
         int other = otherQuantity.getAsInt();
         return new Quantity(this.quantity /other);
     }
 
-    public Quantity getRegularPriceItems(Quantity otherQuantity){
+    public Quantity remainder(Quantity otherQuantity){
         int other = otherQuantity.getAsInt();
         return new Quantity(this.quantity % other);
     }
